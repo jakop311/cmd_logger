@@ -1,7 +1,7 @@
 #!/bin/bash
 ##################################################################################
 #########----------------------------------------------------------------#########
-#######                      Command Script Logging                        #######
+#######                      Command Script Logger                         #######
 #########----------------------------------------------------------------#########
 ##################################################################################
 
@@ -42,7 +42,7 @@ function log_stop() {
                 find "$BD" -name "$FP" -exec rm {} \;
                 SCRIPT_PIDS=($(pidof script))
                 if [ ${#SCRIPT_PIDS[@]} -gt 0 ]; then
-                        echo -e "\033[1m\033[31m[-]\033[0m \033[1mLogging will be stpped for all active sessions.\033[0m"
+                        echo -e "\033[1m\033[31m[-]\033[0m \033[1mLogging will be stopped for all active sessions.\033[0m"
                         for pid in "${SCRIPT_PIDS[@]}"; do
                                 echo -e "\033[1m\033[35m[+]\033[0m \033[1mStopped logging session with PID $pid.\033[0m" && kill "$pid" 
                         done
