@@ -1,7 +1,7 @@
 #!/bin/bash
 ##################################################################################
 #########----------------------------------------------------------------#########
-#######                      Command Script Logger                         #######
+#######                      Command Script Logging                        #######
 #########----------------------------------------------------------------#########
 ##################################################################################
 
@@ -24,7 +24,7 @@ function log_start() {
 
 
                 # Start logging the script
-                script -a "$HOME/script-logs/LOGS_$(date +'%m%d-%H:%M').txt" 
+                script -a -q "$HOME/script-logs/LOGS_$(date +'%m%d-%H:%M').txt" 
         else
                 echo -e "\033[1m\033[33m[*]\033[0m \033[1mLogging is already ON.\033[0m"
         fi
@@ -42,7 +42,7 @@ function log_stop() {
                 find "$BD" -name "$FP" -exec rm {} \;
                 SCRIPT_PIDS=($(pidof script))
                 if [ ${#SCRIPT_PIDS[@]} -gt 0 ]; then
-                        echo -e "\033[1m\033[31m[-]\033[0m \033[1mStopping logging for all active sessions...\033[0m"
+                        echo -e "\033[1m\033[31m[-]\033[0m \033[1mLogging will be stpped for all active sessions.\033[0m"
                         for pid in "${SCRIPT_PIDS[@]}"; do
                                 echo -e "\033[1m\033[35m[+]\033[0m \033[1mStopped logging session with PID $pid.\033[0m" && kill "$pid" 
                         done
@@ -51,7 +51,7 @@ function log_stop() {
                         echo -e "\033[1m\033[31m[-]\033[0m \033[1mNo active logging session found.\033[0m"
                 fi
         else
-                echo -e "\033[1m\033[31m[-]\033[0m \033[1mLogging is already OFF.\033[0m"
+                echo -e "\033[1m\033[31m[-]\033[0m \033[1mLogging is OFF.\033[0m"
         fi
 }
 if [ -z "$LOGGING_STARTED" ]; then
