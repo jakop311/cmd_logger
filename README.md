@@ -1,5 +1,6 @@
 # cmd_logger
 - [cmd\_logger](#cmd_logger)
+  - [Demo](#demo)
   - [What is this?](#what-is-this)
   - [How to enable](#how-to-enable)
   - [How to use](#how-to-use)
@@ -7,9 +8,10 @@
       - [2. Start logging](#2-start-logging)
       - [3. Stop logging](#3-stop-logging)
       - [4. Check your command console log.](#4-check-your-command-console-log)
-
+## Demo
+![alt text](./demo_run.gif?raw=True "Demo")
 ## What is this?
-A bash script for automating the `script` command of linux in all terminals. 
+A bash script for automating the `script` command of linux in all terminals.
 > [!WARNING]
 > Currently usable for logging commands for **zsh in kali**.
 
