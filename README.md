@@ -26,8 +26,8 @@ Copy and paste the the script written inside `cmd_logger.sh` into the last line 
 #### 1. Reconfigure the shell configuration/startup file
 After pasting the code in the configuration/startup file, run the following in the terminal
 ```bash
-# If you're using the .bashrc
-$ source ~/.bashrc
+# Only works with .zshrc
+$ source ~/.zshrc
 ```
 
 #### 2. Start logging
