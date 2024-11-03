@@ -9,17 +9,19 @@
       - [3. Stop logging](#3-stop-logging)
       - [4. Check your command console log.](#4-check-your-command-console-log)
 ## Demo
-![alt text](./demo_run.gif?raw=True "Demo")
+![alt text](./demo_run.gif "Demo")
 ## What is this?
 A bash script for automating the `script` command of linux in all terminals.
 > [!WARNING]
-> Currently usable for logging commands for **zsh in kali**.
+> Currently usable for logging commands only for **zsh in kali**.
 
 This script enables you to start a console command logger for every terminals you open after running `log_start`. Also, it closes all the logging sessions if you run `log_stop` and won't run a logging session unless you run `log_start` again.  
 Also added **[Date Time]** on the left side of `username@hostname` prompt in the terminal to easily check what time the commands were run.
 
 ## How to enable
-Copy and paste the the script written inside `cmd_logger.sh` into the last line of your `~/.zshrc` or whatever shell configuration/startup file you're using. Also, for the **[Date Time]**, find the function `configure_prompt()` inside `~/.zshrc`, comment it out and paste the script written inside `date_cmd.sh`.  
+Copy and paste the the script written inside `cmd_logger.sh` into the last line of your `~/.zshrc` or whatever shell configuration/startup file you're using.  
+
+Also, for the **[Date Time]**, find the function `configure_prompt()` inside `~/.zshrc`, comment it out and paste the script written inside `date_cmd.sh` right below the function commented out.  
   
   > [!NOTE]
   > Do not include `#!/bin/bash` when copy-pasting into `~/.zshrc`.
